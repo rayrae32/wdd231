@@ -1,0 +1,100 @@
+/*General rest */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* Header and Navigation */
+
+
+header{
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+
+
+.menu-toggle{
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+}
+
+
+.menu-toggle{
+    display: block;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+}
+
+
+.nav-menu.show {
+    display: flex;
+}
+
+
+
+/* Course List */
+#course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+
+.course-card{
+    border: 1px solid #f9f9;
+    padding: 1rem;
+    background-color: #f4f4f4;
+
+}
+
+
+.cpmpleted {
+    background-color: #d4edda;
+
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    color: #333;
+    margin-top: 2rem;
+}
