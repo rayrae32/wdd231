@@ -4,10 +4,12 @@ document.getElementById("lastModified").textContent = `Last Modified: ${document
 
 // Course list array
 const courses = [
-    { code: "WDD 230", name: "Web Frontend Development", credits: 3, completed: true },
-    { code: "WDD 231", name: "Intermediate CSS & JS", credits: 3, completed: false },
-    { code: "CSE 121", name: "Intro to Programming", credits: 3, completed: true },
-    { code: "CSE 210", name: "Software Design", credits: 4, completed: false }
+    { code: "CSE 110", name: "Introduction to programming", credits: 2, completed: true },
+    { code: "WDD 130", name: "Web fundamentals", credits: 2, completed: true },
+    { code: "CSE 111", name: "Programming with functions", credits: 2, completed: true },
+    {code: "CSE 210", name: "Programming with Classes", credits: 2, completed: true },
+    { code: "WDD 131", name: "Dynamics web fundamentals ", credits: 2, completed: true },
+    { code: "WDD 231", name: "Web frontend development I", credits: 2, completed: false }
 ];
 
 // Display all courses
