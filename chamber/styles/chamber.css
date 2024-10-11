@@ -8,6 +8,9 @@ body {
     background-color: #f4f4f4;
 }
 
+
+
+
 header {
     background-color: green;
     color: white;
@@ -42,6 +45,28 @@ nav ul li a {
 .member-container.list {
     display: block;
 }
+
+
+#directory-view.grid .member-card {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+}
+
+#directory-view.list .member-card {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  #directory-view.grid .member-card {
+    width: 100%;
+  }
+}
+
+
 
 .member-card {
     background-color: white;
