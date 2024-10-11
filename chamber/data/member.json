@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Company A",
+        "address": "123 Main St, City, State",
+        "phone": "123-456-7890",
+        "website": "https://companya.com",
+        "image": "company-a-logo.png",
+        "membershipLevel": 3
+    },
+    {
+        "name": "Company B",
+        "address": "456 Maple Ave, City, State",
+        "phone": "987-654-3210",
+        "website": "https://companyb.com",
+        "image": "company-b-logo.png",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Company C",
+        "address": "789 Oak Rd, City, State",
+        "phone": "555-123-4567",
+        "website": "https://companyc.com",
+        "image": "company-c-logo.png",
+        "membershipLevel": 1
+    }
+    
+    
+]
