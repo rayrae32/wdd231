@@ -37,6 +37,22 @@ nav ul li a {
     text-decoration: none;
 }
 
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+@media (min-width: 768px) {
+    .hero {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+}
+
+
+
 .member-container.grid {
     display: flex;
     flex-wrap: wrap;
@@ -67,6 +83,13 @@ nav ul li a {
 }
 
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .member-card {
+        width: 100%;
+    }
+}
+
 
 .member-card {
     background-color: white;
@@ -92,9 +115,4 @@ footer {
     bottom: 0;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .member-card {
-        width: 100%;
-    }
-}
+

@@ -1,0 +1,29 @@
+{
+    "members": [
+      {
+        "name": "Gold Business Solutions",
+        "logo": "images/goldwings.jpeg",
+        "phone": "123-456-7890",
+        "address": "123 Main St, Chamber City",
+        "website": "https://goldbusiness.com",
+        "membershipLevel": "Gold"
+      },
+      {
+        "name": "Silver Tech Innovations",
+        "logo": "images/silvertech.png",
+        "phone": "987-654-3210",
+        "address": "456 Technology Dr, Chamber City",
+        "website": "https://silvertech.com",
+        "membershipLevel": "Silver"
+      },
+      {
+        "name": "Gold Star Marketing",
+        "logo": "images/goldstar.jpeg",
+        "phone": "456-789-1234",
+        "address": "789 Star Rd, Chamber City",
+        "website": "https://goldstarmarketing.com",
+        "membershipLevel": "Gold"
+      }
+    ]
+  }
+  
