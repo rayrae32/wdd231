@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chamber of Commerce Join Page">
+    <meta name="author" content="Rachel Amarachukwu Ukpabi">
+    <meta property="og:title" content="Chamber of Commerce Directory">
+    <meta property="og:description" content="A directory of Chamber of Commerce members">
+    <meta property="og:image" content="https://rayrae32.github.io/wdd231/chamber/images/chamberlogo.png">
+    <meta property="og:url" content="https://rayrae32.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+    <title>Join Chamber</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <script defer src="scripts/chamber.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="join.html">Join Page</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Join Our Chamber of Commerce</h1>
+            <form action="thankyou.html" method="GET">
+                <!-- First Name -->
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" title="First Name" autocomplete="given-name" required>
+                <!-- Last Name -->
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" title="Last Name" autocomplete="family-name" required>
+                
+                <!-- Organizational Title -->
+                <label for="orgTitle">Organizational Title</label>
+                <input type="text" id="orgTitle" name="orgTitle" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\- ]{7,}" required>
+                
+                <!-- Email Address -->
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@example.com" required>
+                
+                <!-- Mobile Phone -->
+                <label for="mobile">Mobile Phone</label>
+                <input type="tel" id="mobile" name="mobile" title="Mobile Phone" autocomplete="tel-national" required>
+                
+                
+                <!-- Business Name -->
+                <label for="businessName">Business/Organization Name</label>
+                <input type="text" id="businessName" name="businessName" title="Business Name" autocomplete="organization" required>
+                
+                <!-- Membership Level -->
+                <label for="membership">Membership Level</label>
+                <select id="membership" name="membership">
+                    <option value="np">NP Membership</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+                
+                <!-- Business Description -->
+                <label for="description">Business Description</label>
+                <textarea id="description" name="description" title="Business Description"></textarea>
+                
+                <!-- Timestamp -->
+                <input type="hidden" id="timestamp" name="timestamp" value="">
+                
+                <!-- Submit Button -->
+                <input type="submit" value="Submit">
+            </form>
+            
+            <!-- Membership Level Cards -->
+            <div class="membership-cards">
+                <div class="card">
+                    <h2>NP Membership</h2>
+                    <p>No fee, designed for non-profits</p>
+                    <button onclick="showModal('npModal')">More Info</button>
+                </div>
+                
+                <div class="card">
+                    <h2>Bronze Membership</h2>
+                    <p>Basic membership benefits</p>
+                    <button onclick="showModal('bronzeModal')">More Info</button>
+                </div>
+                
+                <div class="card">
+                    <h2>Silver Membership</h2>
+                    <p>Enhanced benefits and discounts</p>
+                    <button onclick="showModal('silverModal')">More Info</button>
+                </div>
+                <div class="card">
+                    <h2>Gold Membership</h2>
+                    <p>Premium benefits including spotlight advertising</p>
+                    <button onclick="showModal('goldModal')">More Info</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modals -->
+        <div id="npModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('npModal')">&times;</span>
+                <h2>NP Membership</h2>
+                <p>Non-profit organizations receive free membership with access to essential resources.</p>
+            </div>
+        </div>
+        
+        <div id="bronzeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bronzeModal')">&times;</span>
+                <h2>Bronze Membership</h2>
+                <p>Basic membership includes event discounts and access to newsletters.</p>
+            </div>
+        </div>
+        
+        <div id="silverModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('silverModal')">&times;</span>
+                <h2>Silver Membership</h2>
+                <p>Enhanced membership with special training sessions and event discounts.</p>
+            </div>
+        </div>
+        <div id="goldModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('goldModal')">&times;</span>
+                <h2>Gold Membership</h2>
+                <p>Premium membership with spotlight advertising and exclusive networking events.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Chamber of Commerce</p>
+        <p>Developed by Rachel Amarachukwu Ukpabi, WDD 231</p>
+        <p>&copy; <span id="year"></span> | Last modified: <span id="last-modified"></span></p>
+        
+    </footer>
+    
+    <script>
+
+        document.getElementById('timestamp').value = new Date().toISOString();
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+
+
+</body>
+</html>

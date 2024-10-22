@@ -7,6 +7,86 @@ document.addEventListener('DOMContentLoaded', () => {
     getMembers();
 });
 
+
+// Display membership benefits modal
+document.addEventListener('DOMContentLoaded', () => {
+  const modals = document.querySelectorAll('.modal');
+  const openButtons = document.querySelectorAll('.open-modal');
+  const closeButtons = document.querySelectorAll('.close');
+
+  // Open modal
+  openButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      modals[index].style.display = 'flex';
+    });
+  });
+
+  // Close modal
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      modals.forEach((modal) => {
+        modal.style.display = 'none';
+      });
+    });
+  });
+
+  // Close modal when clicking outside of modal content
+  window.addEventListener('click', (e) => {
+    modals.forEach((modal) => {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Auto-populate hidden timestamp field with current date and time
+document.addEventListener('DOMContentLoaded', () => {
+  const timestampField = document.getElementById('timestamp');
+  const currentDateTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+  timestampField.value = currentDateTime;
+});
+
+// Validate form fields
+document.getElementById('joinForm').addEventListener('submit', (event) => {
+  const firstName = document.querySelector('input[name="firstName"]').value;
+  const lastName = document.querySelector('input[name="lastName"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const phone = document.querySelector('input[name="phone"]').value;
+  const organization = document.querySelector('input[name="organization"]').value;
+
+  // Simple validation
+  if (!firstName || !lastName || !email || !phone || !organization) {
+    event.preventDefault();
+    alert('Please fill out all required fields.');
+  }
+});
+
+// Display submitted data on thankyou.html page
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.includes('thankyou.html')) {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Get form values from URL parameters
+    const firstName = urlParams.get('firstName');
+    const lastName = urlParams.get('lastName');
+    const email = urlParams.get('email');
+    const phone = urlParams.get('phone');
+    const organization = urlParams.get('organization');
+    const timestamp = urlParams.get('timestamp');
+
+    // Display the data
+    document.getElementById('submittedName').textContent = `${firstName} ${lastName}`;
+    document.getElementById('submittedEmail').textContent = email;
+    document.getElementById('submittedPhone').textContent = phone;
+    document.getElementById('submittedOrganization').textContent = organization;
+    document.getElementById('submittedTimestamp').textContent = timestamp;
+  }
+});
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchMembers();
     displayDate();
