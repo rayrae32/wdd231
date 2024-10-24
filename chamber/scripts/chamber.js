@@ -8,6 +8,54 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const visitorMessage = document.getElementById('visitorMessage');
+  const lastVisit = localStorage.getItem('lastVisit');
+  const currentDate = Date.now();
+
+  // Determine the message based on the last visit date
+  if (!lastVisit) {
+      visitorMessage.textContent = "Welcome! Let us know if you have any questions.";
+  } else {
+      const daysSinceLastVisit = Math.floor((currentDate - lastVisit) / (1000 * 60 * 60 * 24));
+      if (daysSinceLastVisit < 1) {
+          visitorMessage.textContent = "Back so soon! Awesome!";
+      } else {
+          visitorMessage.textContent = `You last visited ${daysSinceLastVisit} day${daysSinceLastVisit > 1 ? 's' : ''} ago.`;
+      }
+  }
+
+  // Update last visit date in localStorage
+  localStorage.setItem('lastVisit', currentDate);
+
+  // Lazy loading images
+  const images = [
+      { src: 'images/godchamber.jpeg', alt: 'Gold Marketing' },
+      { src: 'images/golddis.jpeg', alt: 'Silver Tech Innovation' },
+      { src: 'images/goldmar.jpeg', alt: 'Marketing' },
+      { src: 'images/gpld.jpeg', alt: 'Gold Wings' },
+      { src: 'images/people.jpeg', alt: 'people marketing' },
+      { src: 'images/sil.jpeg', alt: 'Silver Innovation' },
+  ];
+
+  const photoContainer = document.querySelector('.photo-container');
+
+  images.forEach(img => {
+      const imageElement = document.createElement('img');
+      imageElement.dataset.src = img.src; 
+      imageElement.alt = img.alt;
+      imageElement.loading = "lazy"; 
+
+      imageElement.addEventListener('load', () => {
+          imageElement.src = img.src; // Set src on load
+      });
+
+      photoContainer.appendChild(imageElement);
+  });
+});
+
+
+
 // Display membership benefits modal
 document.addEventListener('DOMContentLoaded', () => {
   const modals = document.querySelectorAll('.modal');
@@ -142,6 +190,9 @@ function displayMembers(members) {
     });
 }
 
+
+
+
 function getMembershipLevel(level) {
     switch (level) {
         case 1: return 'Member';
@@ -156,3 +207,5 @@ function toggleView(view) {
     container.classList.toggle('grid', view === 'grid');
     container.classList.toggle('list', view === 'list');
 }
+
+
