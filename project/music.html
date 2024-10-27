@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the original music portfolio of Rachel Ukpabi, showcasing genres like classical, electronic, and acoustic music.">
+    <meta name="author" content="Rachel Amarachukwu Ukpabi">
+    <meta property="og:title" content="Personal Music Portfolio  website">
+    <meta property="og:description" content="Listen to and learn about original music by Rachel Ukpabi.">
+    <meta property="og:image" content="https://rayrae32.github.io/wdd231/project/images/music.png">
+    <meta property="og:url" content="https://rayrae32.github.io/wdd231/music.html">
+    <meta property="og:type" content="website">
+
+    <title>Harmonic Soundscapes - Personal Music Portfolio</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Harmonic Soundscapes</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="music.html">Music</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tracks">
+            <h2>Original Tracks</h2>
+            <div class="track-list">
+                <div class="track-item" onclick="openModal('track1')">
+                    <h3>Call for me</h3>
+                    <img src="images/call on me.jpeg" alt="SONG cover">
+                    <p>Genre: Afrobeat </p>
+                </div>
+                <div class="track-item" onclick="openModal('track2')">
+                    <h3>Far Away</h3>
+                    <img src="images/farawa.jpeg" alt="song cover">
+                    <p>Genre: R&B Afrosoul</p>
+                </div>
+            </div>
+
+            <!-- Modal Template -->
+            <div class="modal" id="track1-modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('track1')">&times;</span>
+                    <h3>Call for me</h3>
+                    <p>Call for me is a song that describes the passion of my every sound. with a mix of afrosoul and R&B vocals, i am able to create a phenomenon piece that enlightens the soul of every listener. Call for me is a sound that describes relationships and how people reacts to their repctive parts in relationships</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rachel Amarachukwu Ukpabi. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> | Last modified: <span id="last-modified"></span>
+        <a href="attribute.html">Attributions</a>
+    </footer>
+
+    <script src="scripts/scripts.js" type="module"></script>
+</body>
+</html>
+ 
